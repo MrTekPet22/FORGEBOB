@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORGEBOB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Smooth transitions for rank changes */
+        .list-item { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-900 min-h-screen pb-20">
+
+    <header class="py-12 text-center">
+        <h1 class="text-6xl font-black tracking-tighter mb-2">FORGEBOB</h1>
+        <p class="text-slate-400 uppercase tracking-widest text-sm font-bold">Top 100 Leaderboard</p>
+    </header>
+
+    <main class="max-w-xl mx-auto px-4">
+        <div id="forge-list" class="space-y-2">
+            <!-- Items injected by JS -->
+        </div>
+    </main>
+
+    <script>
+        /**
+         * EDIT THIS LIST TO CHANGE DATA
+         * The list will automatically sort by price (highest first).
+         * Change 'name' and 'price' as needed.
+         */
+        const SPACES_DATA = [
+            { name: "Placeholder 1", price: 50 },
+            { name: "Placeholder 2", price: 120 },
+            { name: "Placeholder 3", price: 10 },
+            { name: "Placeholder 4", price: 0 },
+            { name: "Placeholder 5", price: 5 },
+            // ... You can add all 100 here. 
+            // Below is a loop to fill the rest to 100 for this demo.
+        ];
+
+        // This helper fills the list to 100 if you haven't defined them all yet.
+        if (SPACES_DATA.length < 100) {
+            for (let i = SPACES_DATA.length + 1; i <= 100; i++) {
+                SPACES_DATA.push({ name: `Placeholder ${i}`, price: 0 });
+            }
+        }
+
+        function renderBoard() {
+            const container = document.getElementById('forge-list');
+            
+            // 1. Sort by price descending
+            const sorted = [...SPACES_DATA].sort((a, b) => b.price - a.price);
+
+            container.innerHTML = '';
+
+            // 2. Generate HTML for each item
+            sorted.forEach((item, index) => {
+                const rank = index + 1;
+                const isTop3 = rank <= 3 && item.price > 0;
+                
+                const card = document.createElement('div');
+                card.className = `list-item flex items-center p-4 rounded-2xl border transition-all ${
+                    isTop3 
+                    ? 'bg-white border-blue-500 shadow-lg scale-[1.02] z-10' 
+                    : 'bg-white border-gray-200 shadow-sm'
+                }`;
+
+                card.innerHTML = `
+                    <div class="w-12 flex-shrink-0 font-black text-2xl ${isTop3 ? 'text-blue-600' : 'text-gray-300'}">
+                        ${rank}
+                    </div>
+                    <div class="flex-grow">
+                        <div class="font-bold text-lg">${item.name}</div>
+                    </div>
+                    <div class="text-right font-mono font-bold text-xl text-slate-700">
+                        £${item.price}
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        window.onload = renderBoard;
+    </script>
+</body>
+</html>
