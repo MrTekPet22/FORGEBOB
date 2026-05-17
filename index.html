@@ -41,13 +41,6 @@
             // Below is a loop to fill the rest to 100 for this demo.
         ];
 
-        // This helper fills the list to 100 if you haven't defined them all yet.
-        if (SPACES_DATA.length < 100) {
-            for (let i = SPACES_DATA.length + 1; i <= 100; i++) {
-                SPACES_DATA.push({ name: `Placeholder ${i}`, price: 0 });
-            }
-        }
-
         function renderBoard() {
             const container = document.getElementById('forge-list');
             
