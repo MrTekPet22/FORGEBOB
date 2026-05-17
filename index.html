@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        /* Smooth transitions for rank changes */
         .list-item { transition: all 0.3s ease; }
     </style>
 </head>
@@ -21,35 +20,119 @@
 
     <main class="max-w-xl mx-auto px-4">
         <div id="forge-list" class="space-y-2">
-            <!-- Items injected by JS -->
         </div>
     </main>
 
     <script>
-        /**
-         * EDIT THIS LIST TO CHANGE DATA
-         * The list will automatically sort by price (highest first).
-         * Change 'name' and 'price' as needed.
-         */
         const SPACES_DATA = [
-            { name: "Placeholder 1", price: 50 },
-            { name: "Placeholder 2", price: 120 },
-            { name: "Placeholder 3", price: 10 },
-            { name: "Placeholder 4", price: 0 },
-            { name: "Placeholder 5", price: 5 },
-            // ... You can add all 100 here. 
-            // Below is a loop to fill the rest to 100 for this demo.
-        ];
-
+    { name: "Placeholder 1", price: 0 },
+    { name: "Placeholder 2", price: 0 },
+    { name: "Placeholder 3", price: 0 },
+    { name: "Placeholder 4", price: 0 },
+    { name: "Placeholder 5", price: 0 },
+    { name: "Placeholder 6", price: 0 },
+    { name: "Placeholder 7", price: 0 },
+    { name: "Placeholder 8", price: 0 },
+    { name: "Placeholder 9", price: 0 },
+    { name: "Placeholder 10", price: 0 },
+    { name: "Placeholder 11", price: 0 },
+    { name: "Placeholder 12", price: 0 },
+    { name: "Placeholder 13", price: 0 },
+    { name: "Placeholder 14", price: 0 },
+    { name: "Placeholder 15", price: 0 },
+    { name: "Placeholder 16", price: 0 },
+    { name: "Placeholder 17", price: 0 },
+    { name: "Placeholder 18", price: 0 },
+    { name: "Placeholder 19", price: 0 },
+    { name: "Placeholder 20", price: 0 },
+    { name: "Placeholder 21", price: 0 },
+    { name: "Placeholder 22", price: 0 },
+    { name: "Placeholder 23", price: 0 },
+    { name: "Placeholder 24", price: 0 },
+    { name: "Placeholder 25", price: 0 },
+    { name: "Placeholder 26", price: 0 },
+    { name: "Placeholder 27", price: 0 },
+    { name: "Placeholder 28", price: 0 },
+    { name: "Placeholder 29", price: 0 },
+    { name: "Placeholder 30", price: 0 },
+    { name: "Placeholder 31", price: 0 },
+    { name: "Placeholder 32", price: 0 },
+    { name: "Placeholder 33", price: 0 },
+    { name: "Placeholder 34", price: 0 },
+    { name: "Placeholder 35", price: 0 },
+    { name: "Placeholder 36", price: 0 },
+    { name: "Placeholder 37", price: 0 },
+    { name: "Placeholder 38", price: 0 },
+    { name: "Placeholder 39", price: 0 },
+    { name: "Placeholder 40", price: 0 },
+    { name: "Placeholder 41", price: 0 },
+    { name: "Placeholder 42", price: 0 },
+    { name: "Placeholder 43", price: 0 },
+    { name: "Placeholder 44", price: 0 },
+    { name: "Placeholder 45", price: 0 },
+    { name: "Placeholder 46", price: 0 },
+    { name: "Placeholder 47", price: 0 },
+    { name: "Placeholder 48", price: 0 },
+    { name: "Placeholder 49", price: 0 },
+    { name: "Placeholder 50", price: 0 },
+    { name: "Placeholder 51", price: 0 },
+    { name: "Placeholder 52", price: 0 },
+    { name: "Placeholder 53", price: 0 },
+    { name: "Placeholder 54", price: 0 },
+    { name: "Placeholder 55", price: 0 },
+    { name: "Placeholder 56", price: 0 },
+    { name: "Placeholder 57", price: 0 },
+    { name: "Placeholder 58", price: 0 },
+    { name: "Placeholder 59", price: 0 },
+    { name: "Placeholder 60", price: 0 },
+    { name: "Placeholder 61", price: 0 },
+    { name: "Placeholder 62", price: 0 },
+    { name: "Placeholder 63", price: 0 },
+    { name: "Placeholder 64", price: 0 },
+    { name: "Placeholder 65", price: 0 },
+    { name: "Placeholder 66", price: 0 },
+    { name: "Placeholder 67", price: 0 },
+    { name: "Placeholder 68", price: 0 },
+    { name: "Placeholder 69", price: 0 },
+    { name: "Placeholder 70", price: 0 },
+    { name: "Placeholder 71", price: 0 },
+    { name: "Placeholder 72", price: 0 },
+    { name: "Placeholder 73", price: 0 },
+    { name: "Placeholder 74", price: 0 },
+    { name: "Placeholder 75", price: 0 },
+    { name: "Placeholder 76", price: 0 },
+    { name: "Placeholder 77", price: 0 },
+    { name: "Placeholder 78", price: 0 },
+    { name: "Placeholder 79", price: 0 },
+    { name: "Placeholder 80", price: 0 },
+    { name: "Placeholder 81", price: 0 },
+    { name: "Placeholder 82", price: 0 },
+    { name: "Placeholder 83", price: 0 },
+    { name: "Placeholder 84", price: 0 },
+    { name: "Placeholder 85", price: 0 },
+    { name: "Placeholder 86", price: 0 },
+    { name: "Placeholder 87", price: 0 },
+    { name: "Placeholder 88", price: 0 },
+    { name: "Placeholder 89", price: 0 },
+    { name: "Placeholder 90", price: 0 },
+    { name: "Placeholder 91", price: 0 },
+    { name: "Placeholder 92", price: 0 },
+    { name: "Placeholder 93", price: 0 },
+    { name: "Placeholder 94", price: 0 },
+    { name: "Placeholder 95", price: 0 },
+    { name: "Placeholder 96", price: 0 },
+    { name: "Placeholder 97", price: 0 },
+    { name: "Placeholder 98", price: 0 },
+    { name: "Placeholder 99", price: 0 },
+    { name: "Placeholder 100", price: 0 }
+];
         function renderBoard() {
             const container = document.getElementById('forge-list');
             
-            // 1. Sort by price descending
             const sorted = [...SPACES_DATA].sort((a, b) => b.price - a.price);
 
             container.innerHTML = '';
 
-            // 2. Generate HTML for each item
             sorted.forEach((item, index) => {
                 const rank = index + 1;
                 const isTop3 = rank <= 3 && item.price > 0;
